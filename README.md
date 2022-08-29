@@ -1,6 +1,6 @@
-## Trabajo de Técnicas en Aprendizaje Estadístico de la UNAL-med 
+# Trabajo de Técnicas en Aprendizaje Estadístico de la UNAL-med 
 
-# A cargo de:
+## A cargo de:
 
 * Esteban García Carmona
 * Emilio Porras Mejía
