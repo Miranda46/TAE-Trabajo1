@@ -6,3 +6,5 @@
 - Emilio Porras Mejía
 - Felipe Miranda Arboleda
 - Jose Luis Suarez Ledesma
+
+Trabajamos con la base de datos College Scoreboard, buscando analizarla y crear una solución basada en la información que esta dispone. Nuestro objetivo era crear un producto de datos de utilidad.
