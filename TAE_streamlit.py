@@ -13,7 +13,6 @@ from sklearn import preprocessing
 DATA_CSV = "CollegeScorecard.csv"
 POINT_RADIUS = 10000
 
-modeloImport = joblib.load("classifier.pkl")
 
 def load_data():
     data = pd.read_csv(DATA_CSV)
@@ -66,6 +65,8 @@ def get_kmeans_model_separation(dataframe):
     kmeansModelo = KMeans(n_clusters=3, max_iter=1000).fit(dfFinal_3D)
     kmeansModeloLabels = kmeansModelo.labels_
 
+    joblib.dump(kmeansModelo, "classifier.joblib")
+
     data['cluster'] = kmeansModeloLabels
 
     cluster_0 = data[data['cluster'] == 0]
@@ -110,7 +111,7 @@ def devolver_layers(lista):
 
 def cargar_mapa():
     r = pdk.Deck(
-    map_style="light",
+    map_style="dark",
     initial_view_state={
         "latitude": puntoMedioVisual[0],
         "longitude": puntoMedioVisual[1],
@@ -124,7 +125,8 @@ def cargar_mapa():
         }
     })
 
-    return r.to_html(as_string=True)
+    return r
+
 
 st.title("Aplicativo Web TAE")
 
@@ -134,6 +136,7 @@ df_data = load_data()
 
 df1, df2, df3, modelo = get_kmeans_model_separation(df_data)
 
+modeloImport = joblib.load("classifier.joblib")
 
 
 #st.map(df_data, zoom=3)
@@ -172,4 +175,5 @@ with st.sidebar:
         st.write([dep_avg, ind_avg, grad_mdn])
 #############################
 
-components.html(cargar_mapa(), width=600, height=600)
+
+components.html(cargar_mapa().to_html(as_string=True), width=600, height=600)
