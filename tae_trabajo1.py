@@ -10,16 +10,8 @@ Se importan los datos y algunas librerías
 """
 
 import io
-from google.colab import files
 import pandas as pd
-
-uploaded = files.upload()
-df = pd.read_csv(io.BytesIO(uploaded["CollegeScorecard.csv"]))
-
-df
-
-df.shape
-
+df = pd.read_csv("CollegeScorecard.csv")
 nan_value = float("NaN") 
 df.replace("", nan_value, inplace=True)## se reemplaza todos los datos vacios por NaN
 ##df.replace(0, nan_value, inplace=True)
@@ -35,42 +27,10 @@ df
 """Se importa el diccionario de los datos para analizar qué variables se pueden descartar."""
 
 import io
-from google.colab import files
 import pandas as pd
-
-uploaded = files.upload()
-
-df3 = pd.read_csv(io.BytesIO(uploaded["CollegeScorecardDataDictionary.csv"]))
-
-"""Introduciendo el nombre de la variable se obtiene su descripción y otras características"""
-
-description=df3['VARIABLE NAME'] == 'CONTROL'
-descripcion = df3[description]
-descripcion
-
-df.iloc[:,373]
-df["CONTROL"].describe()
-#df3[(df3["VALUE"] == 3)] #& (df3["VARIABLE NAME"] == "CONTROL")
-
-df3.iat[24,0]
-
-df.columns.get_loc('RET_FTL4')
 import numpy as np
-from scipy.stats import pearsonr
-
-##correlacion= np.corrcoef(x_simple, y_simple)
-##df['PREDDEG'].corr(df​​['HCM2'])
-##correlacion = np.corrcoef(df['PREDDEG'], df​​['HCM2'])
-pearsonr(df['PREDDEG'], df['HCM2'])
-
-dfcorrelacion = df.filter(["UNITID", "INSTNM","REGION","LATITUD","LONGITUD","CCBASIC","CCSIZSET","ADM_RATE","SAT_AVG","INC_PCT_M1","IND_INC_PCT_M1","PAR_ED_PCT_PS","APPL_SCH_PCT_GE2","APPL_SCH_PCT_GE5","DEP_INC_AVG","IND_INC_AVG","GRAD_DEBT_MDN","INC_N","DEP_INC_N", "IND_INC_N", 'HI_INC_RPY_5YR_RT', 'MD_INC_RPY_5YR_RT', 'LO_INC_RPY_5YR_RT', 'HI_INC_RPY_3YR_RT', 'MD_INC_RPY_3YR_RT', 'LO_INC_RPY_3YR_RT','PCTFLOAN','RET_FT4','D150_4','C150_4','PFTFAC','AVGFACSAL','TUITIONFEE_IN','TUITIONFEE_OUT','COSTT4_P','PPTUG_EF', 'UGDS', "INC_PCT_M1", "IND_INC_PCT_M1", "PAR_ED_PCT_PS", "APPL_SCH_PCT_GE2", "APPL_SCH_PCT_GE5", "DEP_INC_AVG", "IND_INC_AVG", "GRAD_DEBT_MDN", "INC_N", "DEP_INC_N", "IND_INC_N"])
-dfcorrelacion
-len(dfcorrelacion['INSTNM'].unique())
-
-#dfcorrelacion.replace(to_replace="PrivacySuppressed", value= "NaN")
 
 dfFinal = df.filter(["UNITID", "INSTNM", "LATITUDE", "LONGITUDE",  "DEP_INC_AVG", "IND_INC_AVG", "GRAD_DEBT_MDN", "CONTROL"])
-dfFinal
 dfFinal.replace(to_replace="PrivacySuppressed", value= np.NaN, inplace = True)
 dfFinal
 dfFinal["DEP_INC_AVG"] = dfFinal["DEP_INC_AVG"].astype(float)
@@ -89,27 +49,15 @@ dfFinalNorm[["DEP_INC_AVG", "IND_INC_AVG", "GRAD_DEBT_MDN"]] = preprocessing.Min
 dfFinalNorm
 
 # Commented out IPython magic to ensure Python compatibility.
-import matplotlib
-import seaborn as sb
 from tabulate import tabulate 
-import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 from sklearn.metrics import pairwise_distances_argmin_min
 import scipy.cluster.hierarchy as sch
 from scipy.spatial.distance import squareform
 from scipy.spatial import distance_matrix
-from yellowbrick.cluster import KElbowVisualizer
-
-# %matplotlib inline
-from mpl_toolkits.mplot3d import Axes3D
-plt.rcParams['figure.figsize'] = (25, 12)
-plt.style.use('ggplot')
 
 modelo = KMeans()
-visualizador = KElbowVisualizer(modelo, k=(1,22), timings=True)
-visualizador.fit(dfFinalNorm)
-visualizador.show()
 dfFinal_3D = np.array(dfFinalNorm[["DEP_INC_AVG", "IND_INC_AVG", "GRAD_DEBT_MDN"]])
 kmeansModelo = KMeans(n_clusters=3, max_iter=1000).fit(dfFinal_3D)
 kmeansModeloLabels = kmeansModelo.labels_
@@ -132,17 +80,3 @@ kmeans_model = KMeans(n_clusters=3).fit(df_array)
 labels = kmeans_model.labels_
 #Se hallan los centroides para hacer la función Scatter. 
 centroides = kmeans_model.cluster_centers_
-fig = plt.figure(figsize=(10, 8))
-ax = Axes3D(fig)
-#Se genera la gráfica con los clusters decididos a través de clustering jerárquico.
-ax.scatter(df_array[:, 0], df_array[:, 1], df_array[:, 2], c=labels, s=200,
-           cmap=matplotlib.colors.ListedColormap(["cyan", "orange", "green"]), alpha=0.5)
-ax.scatter(centroides[:, 0], centroides[:, 1], centroides[:, 2], marker='*', c='r', s=1000)
-plt.show()
-
-import plotly.express as px
-import plotly.graph_objects as go
-
-fig = px.scatter_3d(dfFinalNorm, x="DEP_INC_AVG", y="IND_INC_AVG", z="GRAD_DEBT_MDN", 
-                    color="cluster",size='CONTROL')
-fig.show()
