@@ -1,3 +1,4 @@
+from pickletools import float8
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -28,6 +29,11 @@ def load_data():
 
     return data
 
+def predecir(modelo, valores):
+    df = pd.DataFrame([valores], columns=["dep_inc_avg", "ind_inc_avg","grad_debt_mdn"])
+    return modelo.predict(df)[0] + 1
+
+
 @st.cache
 def mpoint(lat, lon):
     return (np.average(lat), np.average(lon))
@@ -54,8 +60,8 @@ def get_kmeans_model_separation(dataframe):
     cluster_0 = data[data['cluster'] == 0]
     cluster_1 = data[data['cluster'] == 1]
     cluster_2 = data[data['cluster'] == 2]
-
-    return (cluster_0, cluster_1, cluster_2)
+    
+    return (cluster_0, cluster_1, cluster_2, kmeansModelo)
 
 def devolver_layers(lista):
     layers = list()
@@ -91,22 +97,8 @@ def devolver_layers(lista):
     return layers
 
 
-df_data = load_data()
-
-df1, df2, df3 = get_kmeans_model_separation(df_data)
-
-
-#st.map(df_data, zoom=3)
-########### SIDEBAR##########
-with st.sidebar:
-    cluster1 = st.checkbox("Mostrar cluster 1", value = True)
-    cluster2 = st.checkbox("Mostrar cluster 2", value = True)
-    cluster3 = st.checkbox("Mostrar cluster 3", value = True)
-
-    layers = devolver_layers([cluster1, cluster2, cluster3])
-    puntoMedioVisual = mpoint(df_data["latitude"], df_data["longitude"])
-
-r = pdk.Deck(
+def cargar_mapa():
+    r = pdk.Deck(
     map_style="light",
     initial_view_state={
         "latitude": puntoMedioVisual[0],
@@ -121,5 +113,51 @@ r = pdk.Deck(
         }
     })
 
+    return r.to_html(as_string=True)
 
-components.html(r.to_html(as_string=True) , width=600, height=600)
+st.title("Aplicativo Web TAE")
+
+######## DATAFRAME PRINCIPAL #########
+df_data = load_data()
+##################################
+
+df1, df2, df3, modelo = get_kmeans_model_separation(df_data)
+
+
+
+#st.map(df_data, zoom=3)
+########### SIDEBAR ##########
+with st.sidebar:
+    cluster1 = st.checkbox("Mostrar cluster 1", value = True)
+    cluster2 = st.checkbox("Mostrar cluster 2", value = True)
+    cluster3 = st.checkbox("Mostrar cluster 3", value = True)
+
+    layers = devolver_layers([cluster1, cluster2, cluster3])
+    puntoMedioVisual = mpoint(df_data["latitude"], df_data["longitude"])
+
+    dep_avg = st.slider(
+        "Ingreso de familias de estudiantes dependientes",
+        float(df_data["dep_inc_avg"].min()), 
+        float(df_data["dep_inc_avg"].max()), 
+        float(df_data["dep_inc_avg"].mean())
+    )
+
+    ind_avg = st.slider(
+        "Ingreso de familias de estudiantes independientes",
+        float(df_data["ind_inc_avg"].min()), 
+        float(df_data["ind_inc_avg"].max()), 
+        float(df_data["ind_inc_avg"].mean())
+    )
+
+    grad_mdn = st.slider(
+        "Mediana de los estudiantes que luego de graduarse quedan en deuda",
+        float(df_data["grad_debt_mdn"].min()), 
+        float(df_data["grad_debt_mdn"].max()), 
+        float(df_data["grad_debt_mdn"].mean())
+    )
+
+    if st.button("Predecir cluster de los valores"):
+        st.write(predecir(modelo, [dep_avg, ind_avg, grad_mdn]))
+#############################
+
+components.html(cargar_mapa(), height=600)
