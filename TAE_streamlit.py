@@ -28,6 +28,10 @@ def load_data():
 
     return data
 
+@st.cache
+def mpoint(lat, lon):
+    return (np.average(lat), np.average(lon))
+
 def get_separation(dataframe):
     control1 = dataframe[dataframe["control"] == 1]
     control2 = dataframe[dataframe["control"] == 2]
@@ -53,45 +57,69 @@ def get_kmeans_model_separation(dataframe):
 
     return (cluster_0, cluster_1, cluster_2)
 
+def devolver_layers(lista):
+    layers = list()
+    if lista[0]:
+        layers.append(pdk.Layer(
+        'ScatterplotLayer',
+            data=df1,
+            get_position=["longitude", "latitude"],
+            get_color='[255, 0, 0, 160]',
+            get_radius=POINT_RADIUS,
+            pickable=True,
+        ))
+    if lista[1]:
+        layers.append(pdk.Layer(
+        'ScatterplotLayer',
+            data=df2,
+            get_position=["longitude", "latitude"],
+            get_color='[0, 255, 0, 160]',
+            get_radius=POINT_RADIUS,
+            pickable=True,
+        ))
+    if lista[2]:
+        layers.append(pdk.Layer(
+        'ScatterplotLayer',
+            data=df3,
+            get_position=["longitude", "latitude"],
+            get_color='[0, 0, 255, 160]',
+            get_radius=POINT_RADIUS,
+            pickable=True,
+        ))
+    else:
+        pass
+    return layers
+
 
 df_data = load_data()
 
 df1, df2, df3 = get_kmeans_model_separation(df_data)
 
+
 #st.map(df_data, zoom=3)
+########### SIDEBAR##########
+with st.sidebar:
+    cluster1 = st.checkbox("Mostrar cluster 1", value = True)
+    cluster2 = st.checkbox("Mostrar cluster 2", value = True)
+    cluster3 = st.checkbox("Mostrar cluster 3", value = True)
+
+    layers = devolver_layers([cluster1, cluster2, cluster3])
+    puntoMedioVisual = mpoint(df_data["latitude"], df_data["longitude"])
+
 r = pdk.Deck(
-     layers=[
-         pdk.Layer(
-            'ScatterplotLayer',
-             data=df1,
-             get_position=["longitude", "latitude"],
-             get_color='[255, 0, 0, 160]',
-             get_radius=POINT_RADIUS,
-             pickable=True,
-         ), 
-         pdk.Layer(
-            'ScatterplotLayer',
-             data=df2,
-             get_position=["longitude", "latitude"],
-             get_color='[0, 255, 0, 160]',
-             get_radius=POINT_RADIUS,
-             pickable=True,
-         ),
-         pdk.Layer(
-            'ScatterplotLayer',
-             data=df3,
-             get_position=["longitude", "latitude"],
-             get_color='[0, 0, 255, 160]',
-             get_radius=POINT_RADIUS,
-             pickable=True,
-         ),
-     ], tooltip={
+    map_style="light",
+    initial_view_state={
+        "latitude": puntoMedioVisual[0],
+        "longitude": puntoMedioVisual[1],
+        "zoom": 3,
+    },
+     layers = layers, 
+     tooltip={
         'html': '<b>Nombre:</b> {instnm}',
         'style': {
             'color': 'white'
         }
     })
 
-r.to_html("scatterplot_layer.html")
-with open("scatterplot_layer.html", "r") as f:
-    components.html(f.read() , width=600, height=600)
+
+components.html(r.to_html(as_string=True) , width=600, height=600)
