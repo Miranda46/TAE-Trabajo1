@@ -1,15 +1,19 @@
-from pickletools import float8
+
 import streamlit as st
 import numpy as np
 import pandas as pd
 import pydeck as pdk
+import joblib
 import streamlit.components.v1 as components
 from sklearn.cluster import KMeans
+from sklearn import preprocessing
+
 
 
 DATA_CSV = "CollegeScorecard.csv"
 POINT_RADIUS = 10000
 
+modeloImport = joblib.load("classifier.pkl")
 
 def load_data():
     data = pd.read_csv(DATA_CSV)
@@ -29,9 +33,16 @@ def load_data():
 
     return data
 
-def predecir(modelo, valores):
-    df = pd.DataFrame([valores], columns=["dep_inc_avg", "ind_inc_avg","grad_debt_mdn"])
-    return modelo.predict(df)[0] + 1
+def normalizar(columna, valor):
+    return (valor - df_data[columna].min())/(df_data[columna].max() - df_data[columna].min())
+
+
+def predecir(valores):
+    valoresNorm = [normalizar("dep_inc_avg", valores[0]), normalizar("ind_inc_avg", valores[1]), normalizar("grad_debt_mdn", valores[2])]
+
+    df = pd.DataFrame([valoresNorm], columns=["DEP_INC_AVG", "IND_INC_AVG", "GRAD_DEBT_MDN"])
+    
+    return modeloImport.predict(df)[0] + 1
 
 
 @st.cache
@@ -157,7 +168,8 @@ with st.sidebar:
     )
 
     if st.button("Predecir cluster de los valores"):
-        st.write(predecir(modelo, [dep_avg, ind_avg, grad_mdn]))
+        st.write(predecir([dep_avg, ind_avg, grad_mdn]))
+        st.write([dep_avg, ind_avg, grad_mdn])
 #############################
 
-components.html(cargar_mapa(), height=600)
+components.html(cargar_mapa(), width=600, height=600)

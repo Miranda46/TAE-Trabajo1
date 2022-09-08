@@ -11,6 +11,7 @@ Se importan los datos y algunas librerías
 
 import io
 import pandas as pd
+import joblib
 df = pd.read_csv("CollegeScorecard.csv")
 nan_value = float("NaN") 
 df.replace("", nan_value, inplace=True)## se reemplaza todos los datos vacios por NaN
@@ -29,6 +30,7 @@ df
 import io
 import pandas as pd
 import numpy as np
+
 
 dfFinal = df.filter(["UNITID", "INSTNM", "LATITUDE", "LONGITUDE",  "DEP_INC_AVG", "IND_INC_AVG", "GRAD_DEBT_MDN", "CONTROL"])
 dfFinal.replace(to_replace="PrivacySuppressed", value= np.NaN, inplace = True)
@@ -49,15 +51,10 @@ dfFinalNorm[["DEP_INC_AVG", "IND_INC_AVG", "GRAD_DEBT_MDN"]] = preprocessing.Min
 dfFinalNorm
 
 # Commented out IPython magic to ensure Python compatibility.
-from tabulate import tabulate 
 from sklearn.cluster import KMeans
-from sklearn.metrics import silhouette_score
-from sklearn.metrics import pairwise_distances_argmin_min
-import scipy.cluster.hierarchy as sch
-from scipy.spatial.distance import squareform
-from scipy.spatial import distance_matrix
 
-modelo = KMeans()
+
+
 dfFinal_3D = np.array(dfFinalNorm[["DEP_INC_AVG", "IND_INC_AVG", "GRAD_DEBT_MDN"]])
 kmeansModelo = KMeans(n_clusters=3, max_iter=1000).fit(dfFinal_3D)
 kmeansModeloLabels = kmeansModelo.labels_
@@ -65,18 +62,25 @@ kmeansModeloCentroides = kmeansModelo.cluster_centers_
 kmeansModeloCentroides
 dfFinal['cluster'] = kmeansModeloLabels
 dfFinalNorm['cluster'] = kmeansModeloLabels
-dfFinal.drop('cluster', axis=1).describe()
-cluster_0 = dfFinal[dfFinal['cluster'] == 0]
-cluster_0.drop('cluster', axis=1).describe()
-cluster_1 = dfFinal[dfFinal['cluster'] == 1]
-cluster_1.drop('cluster', axis=1).describe()
-cluster_2 = dfFinal[dfFinal['cluster'] == 2]
-cluster_2.drop('cluster', axis=1).describe()
-dfFinal.groupby(["cluster"]).describe()
+# dfFinal.drop('cluster', axis=1).describe()
+# cluster_0 = dfFinal[dfFinal['cluster'] == 0]
+# cluster_0.drop('cluster', axis=1).describe()
+# cluster_1 = dfFinal[dfFinal['cluster'] == 1]
+# cluster_1.drop('cluster', axis=1).describe()
+# cluster_2 = dfFinal[dfFinal['cluster'] == 2]
+# cluster_2.drop('cluster', axis=1).describe()
+# dfFinal.groupby(["cluster"]).describe()
 #array con los datos que se trabaja
 df_array = np.array(dfFinalNorm[["DEP_INC_AVG", "IND_INC_AVG", "GRAD_DEBT_MDN"]])
 #se genera modelo de Kmeans para el array anterior
 kmeans_model = KMeans(n_clusters=3).fit(df_array)
 labels = kmeans_model.labels_
+
+
+
+joblib.dump(kmeansModelo, "classifier.pkl") 
+
 #Se hallan los centroides para hacer la función Scatter. 
 centroides = kmeans_model.cluster_centers_
+
+print("Se corrió en pickle")
