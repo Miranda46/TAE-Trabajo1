@@ -6,7 +6,7 @@ import pydeck as pdk
 import joblib
 import streamlit.components.v1 as components
 
-st.set_page_config(page_title="TAE trabajo1", page_icon=None, layout="centered", initial_sidebar_state="auto")
+st.set_page_config(page_title="TAE trabajo1", page_icon="./Graficas/stockfish.png", layout="centered", initial_sidebar_state="auto")
 descripcion = False
 DESCRIPCIONES = ["""# Cluster 1.
 - Es el cluster con mayor cantidad de universidades, con un total de 3174 universidades.
