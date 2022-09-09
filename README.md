@@ -36,6 +36,8 @@ Hicimos el siguiente procedimiento:
 11. Se determina el uso de 3 clusters. Con esto, se trabajará con las etiquetas 0, 1 y 2, que representarán cada uno de los clusters. 
 12. Se procede con el análisis de los diferentes clústers. Se observa lo siguiente:
 
+# Caracterización
+
 ## Cluster 0
 - Es el cluster con mayor cantidad de universidades, con un total de 3174 universidades.
 - Se caracteriza por tener las deudas más bajas, donde la media de la deuda se encuentra en \$10 201 USD y el 75% de los estudiantes tienen una deuda menor a \$12 000 USD. 
@@ -53,10 +55,10 @@ Hicimos el siguiente procedimiento:
 
 
 # Conclusiones
-+ Las universidades pertenecientes al cluster 0 representan la mejor opción para el ciudadano independiente o de bajos ingresos. La falta de capital puede llevar a la deserción y son justamente estos estudiantes los que mayor deuda se imponen[4]. Sin embargo, terminar un "Associate Degree" o "Bacherlor's Degree" puede implicar un aumento de más del 100% del salario [1]. Estar en la capacidad de poder estudiar y, además, no quedar con una deuda que perdurará más de 20 años[2] y tomará decenas de miles de dólares del bolsillo es un lujo. 
++ Las universidades pertenecientes al cluster 0 representan la mejor opción para el ciudadano independiente o de bajos ingresos. La falta de capital puede llevar a la deserción y son justamente estos estudiantes los que mayor deuda se imponen[4]. Sin embargo, terminar un "Associate Degree" o "Bacherlor's Degree" puede implicar un aumento de más del 100% del salario [1]. Estar en la capacidad de poder estudiar y, además, no quedar con una deuda que perdurará más de 20 años[2] y tomará decenas de miles de dólares del bolsillo es un lujo [5]. 
 + En el cluster 1 hallamos universidades que se recomiendan principalmente para ciudadanos estadounidenses con mayor capacidad adquisitiva. Nótese que sus deudas llegan a ser relativamente altas a pesar de tener salarios mayores. Esto muestra que muchas de estas familias prefieren invertir mayores cantidades de dinero en el estudio. 
 + Se conoce que el la deuda promedio por préstamos para estudios Universitarios en Estados Unidos es de \$32 731 [2] y entre las universidades analizadas, de \$16 626. Esto puede afectar gravemente su puntaje crediticio. En un país donde reina la individualidad y las personas buscan emanciparse rápidamente, esto puede representar un peligro en cuanto a la posterior obtención de vivienda. 
-+ 
+
 
 
 
@@ -67,3 +69,5 @@ https://www.zippia.com/advice/student-loan-statistics/ [2]
 https://nces.ed.gov/programs/coe/indicator/cba [3]
 
 https://collegestats.org/articles/beware-the-top-5-reasons-for-dropping-out-of-college/[4]
+
+https://www.forbes.com/advisor/student-loans/average-student-loan-payment/[5]
