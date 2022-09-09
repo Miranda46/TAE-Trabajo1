@@ -32,15 +32,13 @@ Hicimos el siguiente procedimiento:
 8. Se separa en dos DataFrames los datos. Se utiliza el código (UNITID). El primer Dataframe (dfFinal) guarda los datos de las variables financieras continuas, es decir, los ingresos y las deudas y también guarda el dato del tipo de gobierno en la institución académica. En el segundo Dataframe (dfUbicacion), se guardan los datos relacionados con la ubicación y el nombre de la institución.
 9. Se normalizan las 3 columnas continuas utilizando el método de MinMax y se prosigue con el análisis.
 10. Se efectúa el análisis del codo para decidir el número de clusters a utilizar utilizando KMeans.
-### INSERTAR IMAGEN
+<img src="/Graficas/codo.png" alt="Análisis Codo" title="Análisis Codo">
 11. Se determina el uso de 3 clusters. Con esto, se trabajará con las etiquetas 0, 1 y 2, que representarán cada uno de los clusters. 
 12. Se procede con el análisis de los diferentes clústers. Se observa lo siguiente:
 
-<img src="/Graficas/codo.png" alt="Análisis Codo" title="Análisis Codo">
-
-![Employee data]("blob/main/Graficas/clusters.png"?raw=true "Análisis Codo")
-https://github.com/Miranda46/TAE-Trabajo1/blob/main/Graficas/clusters.png
+![Employee data]("blob/main/Graficas/clusters.png"?raw=true "Clúster 3D")
 ![Employee data](https://github.com/Miranda46/TAE-Trabajo1/blob/main/Graficas/clusters.png "Employee Data title")
+
 ## Cluster 0
 - Es el cluster con mayor cantidad de universidades, con un total de 3174 universidades.
 - Se caracteriza por tener las deudas más bajas, donde la media de la deuda se encuentra en \$10 201 USD y el 75% de los estudiantes tienen una deuda menor a \$12 000 USD. 
@@ -64,6 +62,7 @@ https://github.com/Miranda46/TAE-Trabajo1/blob/main/Graficas/clusters.png
 
 
 
+# Referencias
 
 https://www.northeastern.edu/bachelors-completion/news/average-salary-by-education-level/ [1]
 

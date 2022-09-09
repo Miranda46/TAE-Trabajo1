@@ -132,9 +132,9 @@ modeloImport = joblib.load("classifier.joblib")
 #st.map(df_data, zoom=3)
 ########### SIDEBAR ##########
 with st.sidebar:
-    cluster1 = st.checkbox("Mostrar cluster 1", value = True)
-    cluster2 = st.checkbox("Mostrar cluster 2", value = True)
-    cluster3 = st.checkbox("Mostrar cluster 3", value = True)
+    cluster1 = st.checkbox("Mostrar cluster 1 (rojo)", value = True)
+    cluster2 = st.checkbox("Mostrar cluster 2 (verde)", value = True)
+    cluster3 = st.checkbox("Mostrar cluster 3 (azul)", value = True)
 
     layers = devolver_layers([cluster1, cluster2, cluster3])
     puntoMedioVisual = mpoint(df_data["latitude"], df_data["longitude"])
@@ -166,12 +166,14 @@ with st.sidebar:
 
 if not descripcion:
     st.subheader("Mapa de los clusters")
+    st.write("Para ver las características de cada universidad, simplemente pasar el cursor sobre ella.\nSe recomienda utilizar la rueda del ratón para acercar y alejar el mapa.")
     components.html(cargar_mapa().to_html(as_string=True), width=600, height=600)
 
 else:
     st.subheader("Descripción del cluster predecido")
     st.markdown(DESCRIPCIONES[predecir([dep_avg, ind_avg, grad_mdn])])
     st.subheader("Mapa de los clusters")
+    st.write("Para ver las características de cada universidad, simplemente pasar el cursor sobre ella.\nSe recomienda utilizar la rueda del ratón para acercar y alejar el mapa.")
     components.html(cargar_mapa().to_html(as_string=True), width=600, height=600)
         
         
