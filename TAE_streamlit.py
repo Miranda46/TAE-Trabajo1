@@ -5,8 +5,6 @@ import pandas as pd
 import pydeck as pdk
 import joblib
 import streamlit.components.v1 as components
-from sklearn.cluster import KMeans
-from sklearn import preprocessing
 
 st.set_page_config(page_title="TAE trabajo1", page_icon=None, layout="centered", initial_sidebar_state="auto")
 descripcion = False
