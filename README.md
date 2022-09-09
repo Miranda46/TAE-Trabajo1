@@ -52,8 +52,12 @@ Hicimos el siguiente procedimiento:
 ## Cluster 2
 - Tiene 1120 universidades, lo que lo hace el cluster más pequeño.
 - Como se puede observar en la figura 3D y los datos, el cluster es semejante al cluster 0 pero las deudas son, en general, más altas. Véase que los salarios son más bajos que en Cluster 1, con una media de \$40 701 USD en estudiantes dependientes y \$19 174 USD en estudiantes dependientes. Sin embargo, la deuda haciende a una media de \$26 499 USD, más alta que la de los estudiantes del Cluster 1, que es, en promedio, de \$23251 USD.
-- El 75% de los estudiantes tiene una deuda superior a \$21599.0 USD que es mayor a la deuda máxima entre los estudiantes de las universidades del cluster 1, que es de \$18833 USD. 
+- El 75% de los estudiantes tiene una deuda superior a \$21 599.0 USD que es mayor a la deuda máxima entre los estudiantes de las universidades del cluster 1, que es de \$18 833 USD. 
 
+Veamos los datos en gráficas:
+<img src="/Graficas/deuda_mediana.png" alt="deuda mediana en los 3 clusters" title="Deuda mediana">
+<img src="/Graficas/salario_dependiente.png" alt="salario de estudiantes dependientes en los 3 clusters" title="Deuda mediana">
+<img src="/Graficas/salario_independiente.png" alt="salario de estudiantes independientes en los 3 clusters" title="Deuda mediana">
 
 # Conclusiones
 + Las universidades pertenecientes al cluster 0 representan la mejor opción para el ciudadano independiente o de bajos ingresos. La falta de capital puede llevar a la deserción y son justamente estos estudiantes los que mayor deuda se imponen [4]. Sin embargo, terminar un "Associate Degree" o "Bacherlor's Degree" puede implicar un aumento de más del 100% del salario [1]. Estar en la capacidad de poder estudiar y, además, no quedar con una deuda que perdurará más de 20 años [2] y tomará decenas de miles de dólares del bolsillo es un lujo [5]. 
