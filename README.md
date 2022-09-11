@@ -12,14 +12,6 @@ Trabajamos con la base de datos College Scoreboard, buscando analizarla y crear 
 
 ## Columna
 Utilizamos las siguientes columnas:
-- DEP_INC_AVG = Salario promedio de la familia de estudiantes dependientes (valores monetarios del 2014).
-- IND_INC_AVG = Salario promedio de la familia de estudiantes independientes (valores monetarios del 2014).
-- UNITID = Identificador único de la institución Universitaria.
-- INSTNM = Nombre del instituto.
-- LATITUDE = latitud (relativa a la localización geográfica de la sede).
-- LONGITUDE = longitud (relativa a la localización geográfica de la sede).
-- GRAD_DEBT_MDN = la media de la deuda de los estudiantes que completan sus estudios.
-- CONTROL = Identificador de la estructura de gobierno de la institución. 0: Pública. 1: Privada sin ánimo de lucro. 2: Privada con ánimo de lucro. 
 
 | Columna       | Descripción | Unidad |
 | ------------- |-------------- | ------------- |
@@ -64,12 +56,12 @@ Los color Cian representan el cluster 1; los naranja, el cluster 2; los verdes, 
 - Se caracteriza por tener las deudas más bajas, donde la media de la deuda se encuentra en \$10 201 USD y el 75% de los estudiantes tienen una deuda menor a \$12 000 USD. 
 - El salario promedio de los estudiantes dependientes es de \$39 530 USD y de \$17 255 USD(tanto los dependientes como los independientes). Estos salarios son similares a los del cluster 3 y menores a los del cluster 2.
 
-## cluster 2
+## Cluster 2
 - Es el cluster con mayor cantidad de universidades, con un total de 3174 universidades.
 - Se caracteriza por tener las deudas más bajas, donde la media de la deuda se encuentra en \$10 201 USD y el 75% de los estudiantes tienen una deuda menor a \$12 000 USD. 
 - El salario promedio de los estudiantes dependientes es de \$39 530 USD y de \$17 255 USD(tanto los dependientes como los independientes). Estos salarios son similares a los del cluster 3 y menores a los del cluster 2.
 
-## cluster 3
+## Cluster 3
 - Tiene 1120 universidades, lo que lo hace el cluster más pequeño.
 - Como se puede observar en la figura 3D y los datos, el cluster es semejante al cluster 1 pero las deudas son, en general, más altas. Véase que los salarios son más bajos que en cluster 2, con una media de \$40 701 USD en estudiantes dependientes y \$19 174 USD en estudiantes dependientes. Sin embargo, la deuda haciende a una media de \$26 499 USD, más alta que la de los estudiantes del cluster 2, que es, en promedio, de \$23251 USD.
 - El 75% de los estudiantes tiene una deuda superior a \$21 599.0 USD que es mayor a la deuda máxima entre los estudiantes de las universidades del cluster 2, que es de \$18 833 USD. 
@@ -86,7 +78,7 @@ Veamos los datos en gráficas:
 
 # Propuesta
 
-Para poder desarrollar un análisis similar en Colombia, primero se requiere obtener la información económica en cuanto a los préstamos del ICETEX y préstamos a través de entidades privadas. Estos datos se deben discretizar por universidad, estructura de gobierno de la institución académica e independencia económica del estudiante. Se conoce que las universidades públicas y privadas de Colombia funcionan de manera diferente que en Estados Unidos.
+Para poder desarrollar un análisis similar en Colombia, primero se requiere obtener la información económica en cuanto a los préstamos del ICETEX y préstamos a través de entidades privadas. Estos datos se deben discretizar por universidad, estructura de gobierno de la institución académica e independencia económica del estudiante. Se conoce que las universidades públicas y privadas de Colombia funcionan de manera diferente que en Estados Unidos. 
 
 
 # Referencias
