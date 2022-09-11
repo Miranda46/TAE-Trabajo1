@@ -174,6 +174,6 @@ else:
     st.markdown(DESCRIPCIONES[predecir([dep_avg, ind_avg, grad_mdn])])
     st.subheader("Mapa de los clusters")
     st.write("Para ver las características de cada universidad, simplemente pasar el cursor sobre ella.\nSe recomienda utilizar la rueda del ratón para acercar y alejar el mapa.")
-    components.html(cargar_mapa().to_html(as_string=True), width=1000, height=1000)
+    components.html(cargar_mapa().to_html(as_string=True), width=600, height=600)
         
         
