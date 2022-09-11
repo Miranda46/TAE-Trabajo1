@@ -51,9 +51,9 @@ Hicimos el siguiente procedimiento:
 10. Se efectúa el análisis del codo para decidir el número de clusters a utilizar utilizando KMeans.
 <img src="/Graficas/codo.png" alt="Análisis Codo" title="Análisis Codo">
 
-11. Se determina el uso de 3 clusters. Con esto, se trabajará con las etiquetas 0, 1 y 2, que representarán cada uno de los clusters. 
+11. Se determina el uso de 3 clusters. Con esto, se trabajará con las etiquetas 1, 2 y 3, que representarán cada uno de los clusters. 
 12. Se procede con el análisis de los diferentes clústers. Se observa lo siguiente:
-Los color Cian representan el cluster 0; los naranja, el cluster 1; los verdes, el cluster 2. 
+Los color Cian representan el cluster 1; los naranja, el cluster 2; los verdes, el cluster 3. 
 
 ![Clusters](https://github.com/Miranda46/TAE-Trabajo1/blob/main/Graficas/clusters.png "Clusters")
 
@@ -62,12 +62,17 @@ Los color Cian representan el cluster 0; los naranja, el cluster 1; los verdes, 
 ## Cluster 1
 - Es el cluster con mayor cantidad de universidades, con un total de 3174 universidades.
 - Se caracteriza por tener las deudas más bajas, donde la media de la deuda se encuentra en \$10 201 USD y el 75% de los estudiantes tienen una deuda menor a \$12 000 USD. 
-- El salario promedio de los estudiantes dependientes es de \$39 530 USD y de \$17 255 USD(tanto los dependientes como los independientes). Estos salarios son similares a los del cluster 2 y menores a los del cluster 1.
+- El salario promedio de los estudiantes dependientes es de \$39 530 USD y de \$17 255 USD(tanto los dependientes como los independientes). Estos salarios son similares a los del cluster 3 y menores a los del cluster 2.
 
-## Cluster 2
+## cluster 2
+- Es el cluster con mayor cantidad de universidades, con un total de 3174 universidades.
+- Se caracteriza por tener las deudas más bajas, donde la media de la deuda se encuentra en \$10 201 USD y el 75% de los estudiantes tienen una deuda menor a \$12 000 USD. 
+- El salario promedio de los estudiantes dependientes es de \$39 530 USD y de \$17 255 USD(tanto los dependientes como los independientes). Estos salarios son similares a los del cluster 3 y menores a los del cluster 2.
+
+## cluster 3
 - Tiene 1120 universidades, lo que lo hace el cluster más pequeño.
-- Como se puede observar en la figura 3D y los datos, el cluster es semejante al cluster 0 pero las deudas son, en general, más altas. Véase que los salarios son más bajos que en Cluster 1, con una media de \$40 701 USD en estudiantes dependientes y \$19 174 USD en estudiantes dependientes. Sin embargo, la deuda haciende a una media de \$26 499 USD, más alta que la de los estudiantes del Cluster 1, que es, en promedio, de \$23251 USD.
-- El 75% de los estudiantes tiene una deuda superior a \$21 599.0 USD que es mayor a la deuda máxima entre los estudiantes de las universidades del cluster 1, que es de \$18 833 USD. 
+- Como se puede observar en la figura 3D y los datos, el cluster es semejante al cluster 1 pero las deudas son, en general, más altas. Véase que los salarios son más bajos que en cluster 2, con una media de \$40 701 USD en estudiantes dependientes y \$19 174 USD en estudiantes dependientes. Sin embargo, la deuda haciende a una media de \$26 499 USD, más alta que la de los estudiantes del cluster 2, que es, en promedio, de \$23251 USD.
+- El 75% de los estudiantes tiene una deuda superior a \$21 599.0 USD que es mayor a la deuda máxima entre los estudiantes de las universidades del cluster 2, que es de \$18 833 USD. 
 
 Veamos los datos en gráficas:
 <img src="/Graficas/deuda_mediana.png" alt="deuda mediana en los 3 clusters" title="Deuda mediana">
@@ -75,13 +80,13 @@ Veamos los datos en gráficas:
 <img src="/Graficas/salario_independientes.png" alt="salario de estudiantes independientes en los 3 clusters" title="Deuda mediana">
 
 # Conclusiones
-+ Las universidades pertenecientes al cluster 0 representan la mejor opción para el ciudadano independiente o de bajos ingresos. La falta de capital puede llevar a la deserción y son justamente estos estudiantes los que mayor deuda se imponen [4]. Sin embargo, terminar un "Associate Degree" o "Bacherlor's Degree" puede implicar un aumento de más del 100% del salario [1]. Estar en la capacidad de poder estudiar y, además, no quedar con una deuda que perdurará más de 20 años [2] y tomará decenas de miles de dólares del bolsillo es un lujo [5]. 
-+ En el cluster 1 hallamos universidades que se recomiendan principalmente para ciudadanos estadounidenses con mayor capacidad adquisitiva. Nótese que sus deudas llegan a ser relativamente altas a pesar de tener salarios mayores. Esto muestra que muchas de estas familias prefieren invertir mayores cantidades de dinero en el estudio. 
++ Las universidades pertenecientes al cluster 1 representan la mejor opción para el ciudadano independiente o de bajos ingresos. La falta de capital puede llevar a la deserción y son justamente estos estudiantes los que mayor deuda se imponen [4]. Sin embargo, terminar un "Associate Degree" o "Bacherlor's Degree" puede implicar un aumento de más del 100% del salario [1]. Estar en la capacidad de poder estudiar y, además, no quedar con una deuda que perdurará más de 20 años [2] y tomará decenas de miles de dólares del bolsillo es un lujo [5]. 
++ En el cluster 2 hallamos universidades que se recomiendan principalmente para ciudadanos estadounidenses con mayor capacidad adquisitiva. Nótese que sus deudas llegan a ser relativamente altas a pesar de tener salarios mayores. Esto muestra que muchas de estas familias prefieren invertir mayores cantidades de dinero en el estudio. 
 + Se conoce que el la deuda promedio por préstamos para estudios Universitarios en Estados Unidos es de \$32 731 [2] y entre las universidades analizadas, de \$16 626. Esto puede afectar gravemente su puntaje crediticio. En un país donde reina la individualidad y las personas buscan emanciparse rápidamente, esto puede representar un peligro en cuanto a la posterior obtención de vivienda. 
 
 # Propuesta
 
-Para poder desarrollar un análisis similar en Colombia, primero se requiere obtener la información económica en cuanto a los préstamos del ICETEX y préstamos a través de entidades privadas. Estos datos se deben discretizar por universidad, estructura de gobierno de la institución académica e independencia económica del estudiante. Se conoce que las universidades públicas y privadas de Colombia funcionan de manera diferente que en Estados Unidos. Esto se debe a que g
+Para poder desarrollar un análisis similar en Colombia, primero se requiere obtener la información económica en cuanto a los préstamos del ICETEX y préstamos a través de entidades privadas. Estos datos se deben discretizar por universidad, estructura de gobierno de la institución académica e independencia económica del estudiante. Se conoce que las universidades públicas y privadas de Colombia funcionan de manera diferente que en Estados Unidos.
 
 
 # Referencias
