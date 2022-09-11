@@ -27,7 +27,7 @@ Utilizamos las siguientes columnas:
 
 
 # Problema
-Buscamos analizar las universidades según el riesgo que representan para un estudiante y la consecuente deuda con la que terminarán para poder pagar sus estudios universitarios. 
+Buscamos agrupar las universidades según el riesgo económico que representa para un estudiante y la consecuente deuda con la que terminarán para poder pagar sus estudios universitarios. Esto facilitará la elección de una universidad más allá del programa académico que se desee estudiar. Estas decisiones afectarán tanto el futuro profesional como económico del estudiante. 
 
 ## Procedimiento
 Hicimos el siguiente procedimiento:
