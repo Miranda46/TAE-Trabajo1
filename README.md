@@ -82,6 +82,7 @@ Entre universidades con datos de estudiantes dependientes, se ven salarios simil
 
 <img src="/Graficas/mapa_clusters.png" alt="mapa de los 3 clusters" title="Mapa USA">
 
+Se puede observar con ayuda del mapa que en cualquier sitio de EEUU se puede acceder a universidades de cualquier tipo de los clústers. 
 
 # Conclusiones
 + Las universidades pertenecientes al cluster 1 representan la mejor opción para el ciudadano independiente o de bajos ingresos. La falta de capital puede llevar a la deserción y son justamente estos estudiantes los que mayor deuda se imponen [4]. Sin embargo, terminar un "Associate Degree" o "Bacherlor's Degree" puede implicar un aumento de más del 100% del salario [1]. Estar en la capacidad de poder estudiar y, además, no quedar con una deuda que perdurará más de 20 años [2] y tomará decenas de miles de dólares del bolsillo es un lujo [5]. 
