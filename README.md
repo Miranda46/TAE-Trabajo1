@@ -26,8 +26,8 @@ Utilizamos las siguientes columnas:
 
 
 
-# Propuesta
-Con esto, buscamos analizar las universidades según el riesgo que representan para un estudiante y la consecuente deuda con la que terminarán para poder pagar sus estudios universitarios. 
+# Problema
+Buscamos analizar las universidades según el riesgo que representan para un estudiante y la consecuente deuda con la que terminarán para poder pagar sus estudios universitarios. 
 
 ## Procedimiento
 Hicimos el siguiente procedimiento:
@@ -76,7 +76,7 @@ Veamos los datos en gráficas:
 + En el cluster 2 hallamos universidades que se recomiendan principalmente para ciudadanos estadounidenses con mayor capacidad adquisitiva. Nótese que sus deudas llegan a ser relativamente altas a pesar de tener salarios mayores. Esto muestra que muchas de estas familias prefieren invertir mayores cantidades de dinero en el estudio. 
 + Se conoce que el la deuda promedio por préstamos para estudios Universitarios en Estados Unidos es de \$32 731 [2] y entre las universidades analizadas, de \$16 626. Esto puede afectar gravemente su puntaje crediticio. En un país donde reina la individualidad y las personas buscan emanciparse rápidamente, esto puede representar un peligro en cuanto a la posterior obtención de vivienda. 
 
-# Propuesta
+# Propuesta para Colombia
 
 Para poder desarrollar un análisis similar en Colombia, primero se requiere obtener la información económica en cuanto a los préstamos del ICETEX y préstamos a través de entidades privadas. Estos datos se deben discretizar por universidad, estructura de gobierno de la institución académica e independencia económica del estudiante. Se conoce que las universidades públicas y privadas de Colombia funcionan de manera diferente que en Estados Unidos. 
 
