@@ -109,7 +109,8 @@ def cargar_mapa():
         'html': """<b>Nombre: </b> {instnm} <br> 
                    <b>Ingreso medio de familias de estudiantes dependientes: $</b> {dep_inc_avg} <br>
                    <b>Ingreso medio de estudiantes independientes: $</b> {ind_inc_avg} <br>
-                   <b>Media de endeudamiento: $</b> {grad_debt_mdn}""",
+                   <b>Media de endeudamiento: $</b> {grad_debt_mdn}
+                   <b>Tipo de universidad: </b> {control}""",
         'style': {
             'color': 'white'
         }
