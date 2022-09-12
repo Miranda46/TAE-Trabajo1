@@ -92,7 +92,7 @@ Se puede observar con ayuda del mapa que en cualquier sitio de EEUU se puede acc
 
 # Propuesta para Colombia
 
-Para poder desarrollar un análisis similar en Colombia, primero se requiere obtener la información económica en cuanto a los préstamos del ICETEX y préstamos a través de entidades privadas. Estos datos se deben discretizar por universidad, estructura de gobierno de la institución académica e independencia económica del estudiante. Se conoce que las universidades públicas y privadas de Colombia funcionan de manera diferente que en Estados Unidos. 
+Para poder desarrollar un análisis similar en Colombia, primero se requiere obtener la información económica en cuanto a los préstamos del ICETEX y préstamos a través de entidades privadas. Estos datos se deben discretizar por universidad, estructura de gobierno de la institución académica e independencia económica del estudiante, además de tener la ubicación geográfica de cada universidad. Cade destacar que estos datos económicos (Deuda luego de graduarse, salario de estudiante independiente, y salario de familia de estudiante pendendiente) pueden no estar disponibles, o no estar agrupados por universidad o colegios para el público en Colombia. Por último, se conoce que las universidades públicas y privadas de Colombia funcionan de manera diferente que en Estados Unidos. 
 
 
 # Referencias
