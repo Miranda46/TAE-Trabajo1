@@ -41,6 +41,8 @@ Hicimos el siguiente procedimiento:
 8. Se separa en dos DataFrames los datos. Se utiliza el código (UNITID). El primer Dataframe (dfFinal) guarda los datos de las variables financieras continuas, es decir, los ingresos y las deudas y también guarda el dato del tipo de gobierno en la institución académica. En el segundo Dataframe (dfUbicacion), se guardan los datos relacionados con la ubicación y el nombre de la institución.
 9. Se normalizan las 3 columnas continuas utilizando el método de MinMax y se prosigue con el análisis.
 10. Se efectúa el análisis del codo para decidir el número de clusters a utilizar utilizando KMeans.
+
+# Curva de codo
 <img src="/Graficas/codo.png" alt="Análisis Codo" title="Análisis Codo">
 
 11. Se determina el uso de 3 clusters. Con esto, se trabajará con las etiquetas 1, 2 y 3, que representarán cada uno de los clusters. 
