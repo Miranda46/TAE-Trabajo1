@@ -47,6 +47,7 @@ Hicimos el siguiente procedimiento:
 12. Se procede con el análisis de los diferentes clústers. Se observa lo siguiente:
 Los color Cian representan el cluster 1; los naranja, el cluster 2; los verdes, el cluster 3. 
 
+# Visualización de los clusters
 ![Clusters](https://github.com/Miranda46/TAE-Trabajo1/blob/main/Graficas/clusters.png "Clusters")
 
 # Caracterización
