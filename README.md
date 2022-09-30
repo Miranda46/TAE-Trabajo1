@@ -10,6 +10,9 @@
 ## Introducción
 Trabajamos con la base de datos College Scoreboard, la que expone datos importantes de la universidades estadounidenses indicando costos, deudas, promedios, número de egresados, entre otros. Se conoce que hay muchas razones por las cuales los estudiantes desertan sus estudios universitarios. Una de las principales es la inestabilidad económica y la presión que generan las deudas sobre cada individuo. Por esto, en vez de segregar universidades por su calidad académica o por gusto individual y pasión al arte, buscamos generar un medio de ayuda para ayudar a descartar opciones que no sean viables para un estudiante con base en sus capacidades económicas. Se sabe que en EEUU el dinero genera estatus, por lo que muchos se hacen a la idea de que _deben_ ir a la universidad más cara en lo posible. Sin embargo, es justamente esta mentalidad la que termina afectándolos. Per se, el hecho de terminar los estudios ya insiden en sí lo suficiente, aumentando salarios en \$17500 USD (entre _Millennials_ de 25-32 años) y disminuyendo valiosamente la tasa de desempleo (3.8% vs. 12.2%) [6].
 
+# Problema
+Buscamos agrupar las universidades según el riesgo económico que representan para un estudiante y la consecuente deuda con la que terminarán para poder pagar sus estudios universitarios. Estas decisiones afectarán tanto el futuro profesional como económico del estudiante. 
+
 ## Columna
 Utilizamos las siguientes columnas:
 
@@ -24,10 +27,9 @@ Utilizamos las siguientes columnas:
 | GRAD_DEBT_MDN | la media de la deuda de los estudiantes que completan sus estudios. | USD |
 | CONTROL       | Identificador de la estructura de gobierno de la institución. 0: Pública. 1: Privada sin ánimo de lucro. 2: Privada con ánimo de lucro.     | --- |
 
+La selección de columnas se hizo buscando tener en cuenta los salarios actuales del estudiante o su familia, dependiendo si este es dependiente en los ingresos familiares.Para ver cómo influyen estos datos al finalizar los estudios universitarios, se utiliza la media de la deuda de los estudiantes que completan sus estudios.  Se usan los datos de las universidades para ubicarlos geográficamente en el mapa y enunciarlos según su nombre. También se desea ver transversalmente si la estructura de gobierno de la institución afecta en el endeudamiento. Se podría pensar que las universidades públicas son más baratas y afectan menos financieramente a sus estudiantes. 
 
-
-# Problema
-Buscamos agrupar las universidades según el riesgo económico que representa para un estudiante y la consecuente deuda con la que terminarán para poder pagar sus estudios universitarios. Esto facilitará la elección de una universidad más allá del programa académico que se desee estudiar. Estas decisiones afectarán tanto el futuro profesional como económico del estudiante. 
+Demás decisiones de la elección de las variables se pueden observar en el 
 
 ## Procedimiento
 Hicimos el siguiente procedimiento:
@@ -88,7 +90,7 @@ Entre universidades con datos de estudiantes dependientes, se ven salarios simil
 Se puede observar con ayuda del mapa que en cualquier sitio de EEUU se puede acceder a universidades de cualquier tipo de los clústers. 
 
 # Conclusiones
-+ Las universidades pertenecientes al cluster 1 representan la mejor opción para el ciudadano independiente o de bajos ingresos. La falta de capital puede llevar a la deserción y son justamente estos estudiantes los que mayor deuda se imponen [4]. Sin embargo, terminar un "Associate Degree" o "Bacherlor's Degree" puede implicar un aumento de más del 100% del salario [1]. Estar en la capacidad de poder estudiar y, además, no quedar con una deuda que perdurará más de 20 años [2] y tomará decenas de miles de dólares del bolsillo es un lujo [5]. 
++ Las universidades pertenecientes al cluster 1 representan la mejor opción para el ciudadano independiente o de bajos ingresos. La falta de capital puede llevar a la deserción y son justamente estos estudiantes los que mayor deuda se imponen [4]. Sin embargo, terminar un "Associate Degree" o "Bachelor's Degree" puede implicar un aumento de más del 100% del salario [1]. Estar en la capacidad de poder estudiar y, además, no quedar con una deuda que perdurará más de 20 años [2] y tomará decenas de miles de dólares del bolsillo es un lujo [5]. 
 + En el cluster 2 hallamos universidades que se recomiendan principalmente para ciudadanos estadounidenses con mayor capacidad adquisitiva. Nótese que sus deudas llegan a ser relativamente altas a pesar de tener salarios mayores. Esto muestra que muchas de estas familias prefieren invertir mayores cantidades de dinero en el estudio. 
 + Se conoce que el la deuda promedio por préstamos para estudios Universitarios en Estados Unidos es de \$32 731 [2] y entre las universidades analizadas, de \$16 626. Esto puede afectar gravemente su puntaje crediticio. En un país donde reina la individualidad y las personas buscan emanciparse rápidamente, esto puede representar un peligro en cuanto a la posterior obtención de vivienda. 
 
