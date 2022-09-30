@@ -8,7 +8,7 @@
 - José Luis Suárez Ledesma
 
 ## Introducción
-Trabajamos con la base de datos College Scoreboard, la que expone datos importantes de la universidades estadounidenses indicando costos, deudas, promedios, número de egresados, entre otros. Se conoce que hay muchas razones por las cuales los estudiantes desertan sus estudios universitarios. Una de las principales es la inestabilidad económica y la presión que generan las deudas sobre cada individuo. Por esto, en vez de segregar universidades por su calidad académica o por gusto individual y pasión al arte, buscamos generar un medio de ayuda para ayudar a descartar opciones que no sean viables para un estudiante con base en sus capacidades económicas. Se sabe que en EEUU el dinero genera estatus, por lo que muchos se hacen a la idea de que _deben_ ir a la universidad más cara en lo posible. Sin embargo, es justamente esta mentalidad la que termina afectándolos. Per se, el hecho de terminar los estudios ya insiden en sí lo suficiente, aumentando salarios en \$17500 USD (entre _Millennials_ de 25-32 años) y disminuyendo valiosamente la tasa de desempleo (3.8% vs. 12.2%) [6].
+Trabajamos con la base de datos College Scoreboard, la que expone datos importantes de la universidades estadounidenses indicando costos, deudas, promedios, número de egresados, entre otros. Se conoce que hay muchas razones por las cuales los estudiantes desertan sus estudios universitarios. Una de las principales es la inestabilidad económica y la presión que generan las deudas sobre cada individuo. Por esto, en vez de segregar universidades por su calidad académica o por gusto individual y pasión al arte, buscamos generar un medio de ayuda para ayudar a descartar opciones que no sean viables para un estudiante con base en sus capacidades económicas. Se sabe que en EEUU el dinero genera estatus, por lo que muchos se hacen a la idea de que _deben_ ir a la universidad más cara en lo posible. Sin embargo, es justamente esta mentalidad la que termina afectándolos. Per se, el hecho de terminar los estudios ya insiden en sí lo suficiente, aumentando salarios en \$17500 USD (entre _Millennials_ de 25-32 años) y disminuyendo valiosamente la tasa de desempleo (3.8% vs. 12.2%) [1].
 
 # Problema
 Buscamos agrupar las universidades según el riesgo económico que representan para un estudiante y la consecuente deuda con la que terminarán para poder pagar sus estudios universitarios. Estas decisiones afectarán tanto el futuro profesional como económico del estudiante. 
@@ -116,9 +116,9 @@ Entre universidades con datos de estudiantes dependientes, se ven salarios simil
 Se puede observar con ayuda del mapa que en cualquier sitio de EEUU se puede acceder a universidades de cualquier tipo de los clústers. 
 
 # Conclusiones
-+ Las universidades pertenecientes al cluster 1 representan la mejor opción para el ciudadano independiente o de bajos ingresos. La falta de capital puede llevar a la deserción y son justamente estos estudiantes los que mayor deuda se imponen [4]. Sin embargo, terminar un "Associate Degree" o "Bachelor's Degree" puede implicar un aumento de más del 100% del salario [1]. Estar en la capacidad de poder estudiar y, además, no quedar con una deuda que perdurará más de 20 años [2] y tomará decenas de miles de dólares del bolsillo es un lujo [5]. 
++ Las universidades pertenecientes al cluster 1 representan la mejor opción para el ciudadano independiente o de bajos ingresos. La falta de capital puede llevar a la deserción y son justamente estos estudiantes los que mayor deuda se imponen. Sin embargo, terminar un "Associate Degree" o "Bachelor's Degree" puede implicar un aumento de más del 100% del salario [2]. Estar en la capacidad de poder estudiar y, además, no quedar con una deuda que perdurará más de 20 años [3] y tomará decenas de miles de dólares del bolsillo es un lujo [4]. 
 + En el cluster 2 hallamos universidades que se recomiendan principalmente para ciudadanos estadounidenses con mayor capacidad adquisitiva. Nótese que sus deudas llegan a ser relativamente altas a pesar de tener salarios mayores. Esto muestra que muchas de estas familias prefieren invertir mayores cantidades de dinero en el estudio. 
-+ Se conoce que el la deuda promedio por préstamos para estudios Universitarios en Estados Unidos es de \$32 731 [2] y entre las universidades analizadas, de \$16 626. Esto puede afectar gravemente su puntaje crediticio. En un país donde reina la individualidad y las personas buscan emanciparse rápidamente, esto puede representar un peligro en cuanto a la posterior obtención de vivienda. 
++ Se conoce que el la deuda promedio por préstamos para estudios Universitarios en Estados Unidos es de \$32 731 [3] y entre las universidades analizadas, de \$16 626. Esto puede afectar gravemente su puntaje crediticio. En un país donde reina la individualidad y las personas buscan emanciparse rápidamente, esto puede representar un peligro en cuanto a la posterior obtención de vivienda. 
 
 # Propuesta para Colombia
 
@@ -127,14 +127,16 @@ Para poder desarrollar un análisis similar en Colombia, primero se requiere obt
 
 # Referencias
 
-https://www.northeastern.edu/bachelors-completion/news/average-salary-by-education-level/ [1]
+[1] "Pew Research Center" (2014, Febrero 11). The Rising Cost of Not Going to College [Online]. Available: https://www.pewresearch.org/social-trends/2014/02/11/the-rising-cost-of-not-going-to-college/
 
-https://www.zippia.com/advice/student-loan-statistics/ [2]
+[2] T. Stobierski (2020, Junio 2). 2022 Student Loan Statistics: Impact Of Student Debt On Job Market [Online]. Available: https://www.northeastern.edu/bachelors-completion/news/average-salary-by-education-level/ 
 
-https://nces.ed.gov/programs/coe/indicator/cba [3]
+[3] K. Morris (2022, Junio 27). Average Salary by Education Level [Online]. Available: https://www.zippia.com/advice/student-loan-statistics/ 
 
-https://collegestats.org/articles/beware-the-top-5-reasons-for-dropping-out-of-college/ [4]
+[4] B. McGurran, A. Hahn (2022, Marzo 9). Average Student Loan Payment: Estimate How Much You’ll Owe [Online]. Available: https://www.forbes.com/advisor/student-loans/average-student-loan-payment/ 
 
-https://www.forbes.com/advisor/student-loans/average-student-loan-payment/ [5]
 
-https://www.pewresearch.org/social-trends/2014/02/11/the-rising-cost-of-not-going-to-college/ [6]
+# Lecturas Recomendadas relacionadas
+
+"National Center for Education Statistics" (2022, Mayo). Annual Earnings by Educational Attainment [Online]. Available: https://nces.ed.gov/programs/coe/indicator/cba 
+
