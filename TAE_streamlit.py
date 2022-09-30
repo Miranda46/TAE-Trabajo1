@@ -7,6 +7,7 @@ import joblib
 import streamlit.components.v1 as components
 
 st.set_page_config(page_title="TAE trabajo1", page_icon="./Graficas/stockfish.png", layout="centered", initial_sidebar_state="auto")
+
 descripcion = False
 DESCRIPCIONES = ["""# Cluster 1.
 - Es el cluster con mayor cantidad de universidades, con un total de 3174 universidades.
@@ -120,6 +121,13 @@ def cargar_mapa():
 
 
 st.title("Aplicativo Web TAE")
+st.markdown("""¡Bienvenido! Esta aplicación le ayudará a tomar una decisión 
+            en cuanto a su elección de univarsidad en Estados Unidos. Para comenzar, simplemente
+            utilize los sliders de la izquierda para especificar el ingreso de su familia (teniendo en
+            cuenta si usted es estudiante dependiente o independiente), así como la déuda máxima que desea
+            asumir al final de sus estudios. La página le arrojará un conjunto de universidades recomendado
+            que puede visualizar en el mapa. Si desea ver más o menos grupos de universidades, simplemente marque
+            o demarque los botones seleccionables a la izquierda de cada cluster.""")
 
 ######## DATAFRAME PRINCIPAL #########
 df_data = load_data()
@@ -141,21 +149,21 @@ with st.sidebar:
     puntoMedioVisual = mpoint(df_data["latitude"], df_data["longitude"])
 
     dep_avg = st.slider(
-        "Ingreso de familias de estudiantes dependientes",
+        "Ingreso de su familia (estudiantes dependientes)",
         float(df_data["dep_inc_avg"].min()), 
         float(df_data["dep_inc_avg"].max()), 
         float(df_data["dep_inc_avg"].mean())
     )
 
     ind_avg = st.slider(
-        "Ingreso de familias de estudiantes independientes",
+        "Ingreso de su familia (estudiantes independientes)",
         float(df_data["ind_inc_avg"].min()), 
         float(df_data["ind_inc_avg"].max()), 
         float(df_data["ind_inc_avg"].mean())
     )
 
     grad_mdn = st.slider(
-        "Mediana de los estudiantes que luego de graduarse quedan en deuda",
+        "Deuda total que desea asumir al final de sus estudios",
         float(df_data["grad_debt_mdn"].min()), 
         float(df_data["grad_debt_mdn"].max()), 
         float(df_data["grad_debt_mdn"].mean())
@@ -167,14 +175,14 @@ with st.sidebar:
 
 if not descripcion:
     st.subheader("Mapa de los clusters")
-    st.write("Para ver las características de cada universidad, simplemente pasar el cursor sobre ella.\nSe recomienda utilizar la rueda del ratón para acercar y alejar el mapa.")
+    st.write("""Para ver las características de cada universidad, simplemente pasar el cursor sobre ella.\nSe recomienda utilizar la rueda del ratón para acercar y alejar el mapa.""")
     components.html(cargar_mapa().to_html(as_string=True), width=600, height=600)
 
 else:
     st.subheader("Descripción del cluster predecido")
     st.markdown(DESCRIPCIONES[predecir([dep_avg, ind_avg, grad_mdn])])
     st.subheader("Mapa de los clusters")
-    st.write("Para ver las características de cada universidad, simplemente pasar el cursor sobre ella.\nSe recomienda utilizar la rueda del ratón para acercar y alejar el mapa.")
+    st.write("""Para ver las características de cada universidad, simplemente pasar el cursor sobre ella.\nSe recomienda utilizar la rueda del ratón para acercar y alejar el mapa.""")
     components.html(cargar_mapa().to_html(as_string=True), width=600, height=600)
         
         
