@@ -6,7 +6,7 @@ import pydeck as pdk
 import joblib
 import streamlit.components.v1 as components
 
-st.set_page_config(page_title="TAE trabajo1", page_icon="./Graficas/stockfish.png", layout="centered", initial_sidebar_state="auto")
+st.set_page_config(page_title="Universingreso", page_icon="./Graficas/stockfish.png", layout="centered", initial_sidebar_state="auto")
 
 descripcion = False
 DESCRIPCIONES = ("""# Cluster 1.
@@ -121,7 +121,8 @@ def cargar_mapa():
     return r
 
 
-st.title("Aplicativo Web TAE")
+st.title("Universingreso")
+
 st.markdown("""¡Bienvenido! Esta aplicación le ayudará a tomar una decisión 
             en cuanto a su elección de universidad en Estados Unidos. Para comenzar, simplemente
             utilice los sliders de la izquierda para especificar el ingreso de su familia (teniendo en
