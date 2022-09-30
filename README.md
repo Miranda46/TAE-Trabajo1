@@ -8,7 +8,7 @@
 - José Luis Suárez Ledesma
 
 ## Introducción
-Trabajamos con la base de datos College Scoreboard, buscando analizarla y crear una solución basada en la información que esta dispone. Nuestro objetivo era crear un producto de datos de utilidad.
+Trabajamos con la base de datos College Scoreboard, la que expone datos importantes de la universidades estadounidenses indicando costos, deudas, promedios, número de egresados, entre otros. Se conoce que hay muchas razones por las cuales los estudiantes desertan sus estudios universitarios. Una de las principales es la inestabilidad económica y la presión que generan las deudas sobre cada individuo. Por esto, en vez de segregar universidades por su calidad académica o por gusto individual y pasión al arte, buscamos generar un medio de ayuda para ayudar a descartar opciones que no sean viables para un estudiante con base en sus capacidades económicas. Se sabe que en EEUU el dinero genera estatus, por lo que muchos se hacen a la idea de que _deben_ ir a la universidad más cara en lo posible. Sin embargo, es justamente esta mentalidad la que termina afectándolos. Per se, el hecho de terminar los estudios ya insiden en sí lo suficiente, aumentando salarios en \$17500 USD (entre _Millennials_ de 25-32 años) y disminuyendo valiosamente la tasa de desempleo (3.8% vs. 12.2%) [6].
 
 ## Columna
 Utilizamos las siguientes columnas:
@@ -108,3 +108,5 @@ https://nces.ed.gov/programs/coe/indicator/cba [3]
 https://collegestats.org/articles/beware-the-top-5-reasons-for-dropping-out-of-college/ [4]
 
 https://www.forbes.com/advisor/student-loans/average-student-loan-payment/ [5]
+
+https://www.pewresearch.org/social-trends/2014/02/11/the-rising-cost-of-not-going-to-college/ [6]
