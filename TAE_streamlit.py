@@ -122,8 +122,8 @@ def cargar_mapa():
 
 st.title("Aplicativo Web TAE")
 st.markdown("""¡Bienvenido! Esta aplicación le ayudará a tomar una decisión 
-            en cuanto a su elección de univarsidad en Estados Unidos. Para comenzar, simplemente
-            utilize los sliders de la izquierda para especificar el ingreso de su familia (teniendo en
+            en cuanto a su elección de universidad en Estados Unidos. Para comenzar, simplemente
+            utilice los sliders de la izquierda para especificar el ingreso de su familia (teniendo en
             cuenta si usted es estudiante dependiente o independiente), así como la déuda máxima que desea
             asumir al final de sus estudios. La página le arrojará un conjunto de universidades recomendado
             que puede visualizar en el mapa. Si desea ver más o menos grupos de universidades, simplemente marque
@@ -149,21 +149,21 @@ with st.sidebar:
     puntoMedioVisual = mpoint(df_data["latitude"], df_data["longitude"])
 
     dep_avg = st.slider(
-        "Ingreso de su familia (estudiantes dependientes)",
+        "Ingreso de su familia en dólares (estudiantes dependientes)",
         float(df_data["dep_inc_avg"].min()), 
         float(df_data["dep_inc_avg"].max()), 
         float(df_data["dep_inc_avg"].mean())
     )
 
     ind_avg = st.slider(
-        "Ingreso de su familia (estudiantes independientes)",
+        "Ingreso de su familia en dólares (estudiantes independientes)",
         float(df_data["ind_inc_avg"].min()), 
         float(df_data["ind_inc_avg"].max()), 
         float(df_data["ind_inc_avg"].mean())
     )
 
     grad_mdn = st.slider(
-        "Deuda total que desea asumir al final de sus estudios",
+        "Deuda total en dólares que desea asumir al final de sus estudios",
         float(df_data["grad_debt_mdn"].min()), 
         float(df_data["grad_debt_mdn"].max()), 
         float(df_data["grad_debt_mdn"].mean())
