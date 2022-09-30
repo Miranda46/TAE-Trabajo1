@@ -29,7 +29,7 @@ Utilizamos las siguientes columnas:
 
 La selección de columnas se hizo buscando tener en cuenta los salarios actuales del estudiante o su familia, dependiendo si este es dependiente en los ingresos familiares.Para ver cómo influyen estos datos al finalizar los estudios universitarios, se utiliza la media de la deuda de los estudiantes que completan sus estudios.  Se usan los datos de las universidades para ubicarlos geográficamente en el mapa y enunciarlos según su nombre. También se desea ver transversalmente si la estructura de gobierno de la institución afecta en el endeudamiento. Se podría pensar que las universidades públicas son más baratas y afectan menos financieramente a sus estudiantes. 
 
-Demás decisiones de la elección de las variables se pueden observar en el 
+Demás decisiones de la elección de las columnas se pueden observar a continuación en el procedimiento. 
 
 ## Procedimiento
 Hicimos el siguiente procedimiento:
