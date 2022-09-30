@@ -128,7 +128,7 @@ st.markdown("""¡Bienvenido! Esta aplicación le ayudará a tomar una decisión
             utilice el formulario de la izquierda para especificar su dependencia/independencia, el ingreso de su familia y 
             la déuda máxima que desea asumir al final de sus estudios. La página le arrojará un conjunto de universidades recomendado
             que puede visualizar en el mapa. Si desea ver más o menos grupos de universidades, simplemente marque
-            o demarque los botones seleccionables de la izquierda.""")
+            o desmarque los botones seleccionables de la parte inferior izquierda.""")
 
 ######## DATAFRAME PRINCIPAL #########
 df_data = load_data()
