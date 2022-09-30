@@ -9,7 +9,7 @@ import streamlit.components.v1 as components
 st.set_page_config(page_title="TAE trabajo1", page_icon="./Graficas/stockfish.png", layout="centered", initial_sidebar_state="auto")
 
 descripcion = False
-DESCRIPCIONES = ["""# Cluster 1.
+DESCRIPCIONES = ("""# Cluster 1.
 - Es el cluster con mayor cantidad de universidades, con un total de 3174 universidades.
 - Se caracteriza por tener las deudas más bajas, donde la media de la deuda se encuentra en \$10 201 USD y el 75\% de los estudiantes tienen una deuda menor a \$12 000 USD. 
 - El salario promedio de los estudiantes dependientes es de \$39 530 USD y de \$17 255   (tanto los dependientes como los independientes). Estos salarios son similares a los del cluster 3 y menores a los del cluster 2.""",
@@ -20,7 +20,8 @@ DESCRIPCIONES = ["""# Cluster 1.
                 """ # Cluster 3.
 - Tiene 1120 universidades, lo que lo hace el cluster más pequeño.
 - Como se puede observar en la figura 3D y los datos, el cluster es semejante al cluster 1 pero las deudas son, en general, más altas. Véase que los salarios son más bajos que en Cluster 2, con una media de \$40 701 USD en estudiantes dependientes y \$19 174 USD en estudiantes dependientes. Sin embargo, la deuda haciende a una media de \$26 499 USD, más alta que la de los estudiantes del Cluster 2, que es, en promedio, de \$23251 USD.
-- El 75\% de los estudiantes tiene una deuda superior a \$21599.0 USD que es mayor a la deuda máxima entre los estudiantes de las universidades del cluster 2, que es de \$18833 USD."""]
+- El 75\% de los estudiantes tiene una deuda superior a \$21599.0 USD que es mayor a la deuda máxima entre los estudiantes de las universidades del cluster 2, que es de \$18833 USD.""")
+
 POINT_RADIUS = 10000
 
 
@@ -127,7 +128,7 @@ st.markdown("""¡Bienvenido! Esta aplicación le ayudará a tomar una decisión
             cuenta si usted es estudiante dependiente o independiente), así como la déuda máxima que desea
             asumir al final de sus estudios. La página le arrojará un conjunto de universidades recomendado
             que puede visualizar en el mapa. Si desea ver más o menos grupos de universidades, simplemente marque
-            o demarque los botones seleccionables a la izquierda de cada cluster.""")
+            o demarque los botones seleccionables de la izquierda.""")
 
 ######## DATAFRAME PRINCIPAL #########
 df_data = load_data()
@@ -141,26 +142,46 @@ modeloImport = joblib.load("classifier.joblib")
 #st.map(df_data, zoom=3)
 ########### SIDEBAR ##########
 with st.sidebar:
+    ############# CHECKS #####################
+    st.markdown("# Clusters a mostrar")
+    
+    st.markdown("Solo se mostrarán los clusters que estén marcados en el momento.")
+
     cluster1 = st.checkbox("Mostrar cluster 1 (rojo)", value = True)
     cluster2 = st.checkbox("Mostrar cluster 2 (verde)", value = True)
     cluster3 = st.checkbox("Mostrar cluster 3 (azul)", value = True)
 
     layers = devolver_layers([cluster1, cluster2, cluster3])
     puntoMedioVisual = mpoint(df_data["latitude"], df_data["longitude"])
+    ##########################################
 
-    dep_avg = st.slider(
-        "Ingreso de su familia en dólares (estudiantes dependientes)",
-        float(df_data["dep_inc_avg"].min()), 
-        float(df_data["dep_inc_avg"].max()), 
-        float(df_data["dep_inc_avg"].mean())
-    )
+    ################# ENTRADAS DATOS A PRECEDIR ##############################
+    st.subheader("Datos de nueva entrada para predecir")
 
-    ind_avg = st.slider(
-        "Ingreso de su familia en dólares (estudiantes independientes)",
-        float(df_data["ind_inc_avg"].min()), 
-        float(df_data["ind_inc_avg"].max()), 
-        float(df_data["ind_inc_avg"].mean())
-    )
+    st.write("Es usted dependiente o independiente del salario de su familia?")
+    dependencia = st.radio(label="Escoja: ",
+             options=("Dependiente", "Independiente"))
+
+    if dependencia == "Dependiente":
+
+        dep_avg = st.slider(
+            "Ingreso de su familia en dólares",
+            float(df_data["dep_inc_avg"].min()), 
+            float(df_data["dep_inc_avg"].max()), 
+            float(df_data["dep_inc_avg"].mean())
+        )
+
+        ind_avg = float(df_data["ind_inc_avg"].min())
+    else:
+
+        ind_avg = st.slider(
+            "Ingreso de su familia en dólares",
+            float(df_data["ind_inc_avg"].min()), 
+            float(df_data["ind_inc_avg"].max()), 
+            float(df_data["ind_inc_avg"].mean())
+        )
+
+        dep_avg = float(df_data["dep_inc_avg"].min())
 
     grad_mdn = st.slider(
         "Deuda total en dólares que desea asumir al final de sus estudios",
@@ -168,6 +189,7 @@ with st.sidebar:
         float(df_data["grad_debt_mdn"].max()), 
         float(df_data["grad_debt_mdn"].mean())
     )
+    ############################################################
 
     if st.button("Predecir cluster de los valores"):
         descripcion = True
