@@ -125,9 +125,8 @@ st.title("Universingreso")
 
 st.markdown("""¡Bienvenido! Esta aplicación le ayudará a tomar una decisión 
             en cuanto a su elección de universidad en Estados Unidos. Para comenzar, simplemente
-            utilice los sliders de la izquierda para especificar el ingreso de su familia (teniendo en
-            cuenta si usted es estudiante dependiente o independiente), así como la déuda máxima que desea
-            asumir al final de sus estudios. La página le arrojará un conjunto de universidades recomendado
+            utilice el formulario de la izquierda para especificar su dependencia/independencia, el ingreso de su familia y 
+            la déuda máxima que desea asumir al final de sus estudios. La página le arrojará un conjunto de universidades recomendado
             que puede visualizar en el mapa. Si desea ver más o menos grupos de universidades, simplemente marque
             o demarque los botones seleccionables de la izquierda.""")
 
@@ -143,21 +142,9 @@ modeloImport = joblib.load("classifier.joblib")
 #st.map(df_data, zoom=3)
 ########### SIDEBAR ##########
 with st.sidebar:
-    ############# CHECKS #####################
-    st.markdown("# Clusters a mostrar")
-    
-    st.markdown("Solo se mostrarán los clusters que estén marcados en el momento.")
-
-    cluster1 = st.checkbox("Mostrar cluster 1 (rojo)", value = True)
-    cluster2 = st.checkbox("Mostrar cluster 2 (verde)", value = True)
-    cluster3 = st.checkbox("Mostrar cluster 3 (azul)", value = True)
-
-    layers = devolver_layers([cluster1, cluster2, cluster3])
-    puntoMedioVisual = mpoint(df_data["latitude"], df_data["longitude"])
-    ##########################################
 
     ################# ENTRADAS DATOS A PRECEDIR ##############################
-    st.subheader("Datos de nueva entrada para predecir")
+    st.markdown("# Datos de nueva entrada para predecir")
 
     st.write("Es usted dependiente o independiente del salario de su familia?")
     dependencia = st.radio(label="Escoja: ",
@@ -194,6 +181,20 @@ with st.sidebar:
 
     if st.button("Predecir cluster de los valores"):
         descripcion = True
+    
+    ############# CHECKS #####################
+    st.write("                      ")
+    st.markdown("# Clusters a mostrar")
+    
+    st.markdown("Solo se mostrarán los clusters que estén marcados en el momento.")
+
+    cluster1 = st.checkbox("Mostrar cluster 1 (rojo)", value = True)
+    cluster2 = st.checkbox("Mostrar cluster 2 (verde)", value = True)
+    cluster3 = st.checkbox("Mostrar cluster 3 (azul)", value = True)
+
+    layers = devolver_layers([cluster1, cluster2, cluster3])
+    puntoMedioVisual = mpoint(df_data["latitude"], df_data["longitude"])
+    ##########################################
 #############################
 
 if not descripcion:
