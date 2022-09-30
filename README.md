@@ -27,7 +27,7 @@ Utilizamos las siguientes columnas:
 | GRAD_DEBT_MDN | la media de la deuda de los estudiantes que completan sus estudios. | USD |
 | CONTROL       | Identificador de la estructura de gobierno de la institución. 0: Pública. 1: Privada sin ánimo de lucro. 2: Privada con ánimo de lucro.     | --- |
 
-#### Tabla 1: *Columnas utilizadas.*
+**Tabla 1:** *Columnas utilizadas.*
 
 \
 La selección de columnas se hizo buscando tener en cuenta los salarios actuales del estudiante o su familia, dependiendo si este es dependiente en los ingresos familiares.Para ver cómo influyen estos datos al finalizar los estudios universitarios, se utiliza la media de la deuda de los estudiantes que completan sus estudios.  Se usan los datos de las universidades para ubicarlos geográficamente en el mapa y enunciarlos según su nombre. También se desea ver transversalmente si la estructura de gobierno de la institución afecta en el endeudamiento. Se podría pensar que las universidades públicas son más baratas y afectan menos financieramente a sus estudiantes. 
@@ -50,7 +50,7 @@ Hicimos el siguiente procedimiento:
 # Curva de codo
 <img src="/Graficas/codo.png" alt="Análisis Codo" title="Análisis Codo">
 
-#### Imagen 1: *Análisis de curva de codo.*
+**Imagen 1:** *Análisis de curva de codo.*
 
 \
 11. Se determina el uso de 3 clusters. Con esto, se trabajará con las etiquetas 1, 2 y 3, que representarán cada uno de los clusters. 
@@ -60,7 +60,7 @@ Los color Cian representan el cluster 1; los naranja, el cluster 2; los verdes, 
 # Visualización de los clusters
 ![Clusters](https://github.com/Miranda46/TAE-Trabajo1/blob/main/Graficas/clusters.png "Clusters")
 
-#### Imagen 2: *Visualización 3D de los clusters.*
+**Imagen 2:** *Visualización 3D de los clusters.*
 
 
 # Caracterización
@@ -83,19 +83,19 @@ Los color Cian representan el cluster 1; los naranja, el cluster 2; los verdes, 
 Veamos los datos en gráficas:
 <img src="/Graficas/deuda_mediana.png" alt="deuda mediana en los 3 clusters" title="Deuda mediana">
 
-#### Imagen 3: *Deuda mediana de los 3 clusters.*
+**Imagen 3:** *Deuda mediana de los 3 clusters.*
 
 \
 Se pueden observar deudas monetarias especialmente altas en el tercer cluster, es decir, en el de la derecha. 
 <img src="/Graficas/salario_dependientes.png" alt="salario de estudiantes dependientes en los 3 clusters" title="Deuda mediana">
 
-#### Imagen 4: *Salario estudiantes dependientes de los 3 clusters.*
+**Imagen 4:** *Salario estudiantes dependientes de los 3 clusters.*
 
 \
 Entre universidades con datos de estudiantes dependientes, se ven salarios similares en el cluster 1 y 3, el cluster 2 pueden observarse salarios más altos. 
 <img src="/Graficas/salario_independientes.png" alt="salario de estudiantes independientes en los 3 clusters" title="Deuda mediana">
 
-#### Imagen 5: *Salario estudiantes independientes de los 3 clusters.*
+**Imagen 5:** *Salario estudiantes independientes de los 3 clusters.*
 
 
 # Mapa
@@ -105,12 +105,12 @@ Entre universidades con datos de estudiantes dependientes, se ven salarios simil
 | 2 | Verde |
 | 3 | Azul | 
 
-#### Tabla 2: *Clusters y sus respectivos colores en el mapa.*
+**Tabla 2:** *Clusters y sus respectivos colores en el mapa.*
 
 \
 <img src="/Graficas/mapa_clusters.png" alt="mapa de los 3 clusters" title="Mapa USA">
 
-#### Imagen 6: *Mapa de representación de los 3 clusters con sus respectivos colores.*
+**Imagen 6:** *Mapa de representación de los 3 clusters con sus respectivos colores.*
 
 \
 Se puede observar con ayuda del mapa que en cualquier sitio de EEUU se puede acceder a universidades de cualquier tipo de los clústers. 
