@@ -55,13 +55,13 @@ Hicimos el siguiente procedimiento:
 \
 11. Con base en la curva de codo, observada en la *Imagen 1*, se determina el uso de 3 clusters. Con esto, se trabajará con las etiquetas 1, 2 y 3, que representarán cada uno de los clusters. 
 12. Se procede con el análisis de los diferentes clústers. Se observa lo siguiente en la *Imagen 2*:
-Los color Cian representan el cluster 1; los naranja, el cluster 2; los verdes, el cluster 3. 
 
-# Visualización de los clusters
+## Visualización de los clusters
 ![Clusters](https://github.com/Miranda46/TAE-Trabajo1/blob/main/Graficas/clusters.png "Clusters")
-
 **Imagen 2:** *Visualización 3D de los clusters.*
 
+Los color Cian representan el cluster 1; los naranja, el cluster 2; los verdes, el cluster 3. 
+A continuación, se enuncia la caracterización de cada clúster según sus características. 
 
 # Caracterización
 
@@ -77,7 +77,7 @@ Los color Cian representan el cluster 1; los naranja, el cluster 2; los verdes, 
 
 ## Cluster 3
 - Tiene 1120 universidades, lo que lo hace el cluster más pequeño.
-- Como se puede observar en la figura 3D y los datos, el cluster es semejante al cluster 1 pero las deudas son, en general, más altas. Véase que los salarios son más bajos que en cluster 2, con una media de \$40 701 USD en estudiantes dependientes y \$19 174 USD en estudiantes dependientes. Sin embargo, la deuda haciende a una media de \$26 499 USD, más alta que la de los estudiantes del cluster 2, que es, en promedio, de \$23251 USD.
+- Como se puede observar en la *Imagen 2* y los datos, el cluster es semejante al cluster 1 pero las deudas son, en general, más altas. Véase que los salarios son más bajos que en cluster 2, con una media de \$40 701 USD en estudiantes dependientes y \$19 174 USD en estudiantes dependientes. Sin embargo, la deuda haciende a una media de \$26 499 USD, más alta que la de los estudiantes del cluster 2, que es, en promedio, de \$23 251 USD.
 - El 75% de los estudiantes tiene una deuda superior a \$21 599.0 USD que es mayor a la deuda máxima entre los estudiantes de las universidades del cluster 2, que es de \$18 833 USD. 
 
 Veamos los datos en gráficas:
@@ -106,14 +106,14 @@ Según la *Imagen 4*, entre universidades con datos de estudiantes dependientes,
 | 3 | Azul | 
 
 **Tabla 2:** *Clusters y sus respectivos colores en el mapa.*
-
+Con la *Tabla 2* podemos identificar cada clúster en la siguiente imagen:
 \
 <img src="/Graficas/mapa_clusters.png" alt="mapa de los 3 clusters" title="Mapa USA">
 
 **Imagen 6:** *Mapa de representación de los 3 clusters con sus respectivos colores.*
 
 \
-Se puede observar con ayuda del mapa que en cualquier sitio de EEUU se puede acceder a universidades de cualquier tipo de los clústers. 
+Se puede observar con ayuda de la *Imagen 6* que en cualquier sitio de EEUU se puede acceder a universidades de cualquier tipo de los clústers. 
 
 # Conclusiones
 + Las universidades pertenecientes al cluster 1 representan la mejor opción para el ciudadano independiente o de bajos ingresos. La falta de capital puede llevar a la deserción y son justamente estos estudiantes los que mayor deuda se imponen. Sin embargo, terminar un "Associate Degree" o "Bachelor's Degree" puede implicar un aumento de más del 100% del salario [2]. Estar en la capacidad de poder estudiar y, además, no quedar con una deuda que perdurará más de 20 años [3] y tomará decenas de miles de dólares del bolsillo es un lujo [4]. 
