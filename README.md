@@ -61,6 +61,7 @@ Hicimos el siguiente procedimiento:
 
 **Imagen 2:** *Visualización 3D de los clusters.*
 
+\
 Los color Cian representan el cluster 1; los naranja, el cluster 2; los verdes, el cluster 3. 
 A continuación, se enuncia la caracterización de cada clúster según sus características. 
 
@@ -142,5 +143,7 @@ Todas las imágenes y las tablas son de propia autoría.
 # Lecturas Recomendadas relacionadas
 
 "National Center for Education Statistics" (2022, Mayo). Annual Earnings by Educational Attainment [Online]. Available: https://nces.ed.gov/programs/coe/indicator/cba 
+
 Johnstone, Bruce. (2006). Financiación de la educación superior en Estados Unidos: cuestiones actuales  [Online]. Available: http://hdl.handle.net/2099/7264
+
 Gutter, M., Copur, Z. (2011, April). Financial Behaviors and Financial Well-Being of College Students: Evidence from a National Survey [Online]. Available: https://doi.org/10.1007/s10834-011-9255-2
