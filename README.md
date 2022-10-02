@@ -108,6 +108,7 @@ Según la *Imagen 4*, entre universidades con datos de estudiantes dependientes,
 | 3 | Azul | 
 
 **Tabla 2:** *Clusters y sus respectivos colores en el mapa.*
+\
 Con la *Tabla 2* podemos identificar cada clúster en la siguiente imagen:
 \
 <img src="/Graficas/mapa_clusters.png" alt="mapa de los 3 clusters" title="Mapa USA">
