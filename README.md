@@ -8,12 +8,12 @@
 - José Luis Suárez Ledesma
 
 ## Introducción
-Trabajamos con la base de datos College Scoreboard, la cual expone datos importantes de la universidades estadounidenses indicando costos, deudas, promedios, número de egresados, entre otros. Se conoce que hay muchas razones por las cuales los estudiantes desertan sus estudios universitarios. Una de las principales es la inestabilidad económica y la presión que generan las deudas sobre cada individuo. Por esto, en vez de segregar universidades por su calidad académica o por gusto individual y pasión al arte, buscamos generar un medio de ayuda para ayudar a descartar opciones que no sean viables para un estudiante con base en sus capacidades económicas. Se sabe que en EEUU el dinero genera estatus, por lo que muchos se hacen a la idea de que _deben_ ir a la universidad más cara en lo posible. Sin embargo, es justamente esta mentalidad la que termina afectándolos. Per se, el hecho de terminar los estudios ya insiden en sí lo suficiente, aumentando salarios en \$17500 USD (entre _Millennials_ de 25-32 años) y disminuyendo valiosamente la tasa de desempleo (3.8% vs. 12.2%) [1].
+Trabajamos con la base de datos College Scoreboard, la cual expone datos importantes de la universidades estadounidenses indicando costos, deudas, ingresos, número de egresados, entre otros. Se conoce que hay muchas razones por las cuales los estudiantes desertan sus estudios universitarios. Una de las principales es la inestabilidad económica y la presión que generan las deudas sobre cada individuo. Por esto, en vez de segregar universidades por su calidad académica o por gusto individual y pasión al arte, buscamos generar un medio para ayudar a descartar opciones que no sean viables para un estudiante con base en sus capacidades económicas. Se sabe que en EEUU el dinero genera estatus, por lo que muchos se hacen a la idea de que _deben_ ir a la universidad más cara en la medida de lo posible. Sin embargo, es justamente esta mentalidad la que termina afectándolos. El hecho de terminar los estudios inside en sí lo suficiente, aumentando salarios en \$17500 USD (entre _Millennials_ de 25-32 años) y disminuyendo valiosamente la tasa de desempleo (3.8% vs. 12.2%) [1].
 
-# Problema
-Buscamos agrupar las universidades según el riesgo económico que representan para un estudiante y la consecuente deuda con la que terminarán para poder pagar sus estudios universitarios. Estas decisiones afectarán tanto el futuro profesional como económico del estudiante. 
+## Objetivo
+Buscamos agrupar las universidades según el riesgo económico que representan para un estudiante y la consecuente deuda con la que terminarán para poder pagar sus estudios universitarios. Estas decisiones afectarán tanto el futuro profesional como económico del estudiante. El producto de datos está dirigido a los aspirantes y estudiantes dependientes o independientes que buscan seleccionar (o descartar) universidades según sus capacidades económicas, de tal manera que puedan asegurar una estabilidad económica hacia el futuro sin recaer en grandes deudas que, por lo general, toman décadas en poderse pagar y afectan, especialmente, a estudiantes independientes y/o de bajos recursos.
 
-## Columnas
+## Variables
 Utilizamos las siguientes columnas:
 
 | Columna       | Descripción | Unidad |
@@ -30,7 +30,7 @@ Utilizamos las siguientes columnas:
 **Tabla 1:** *Columnas utilizadas.*
 
 \
-La selección de columnas se hizo buscando tener en cuenta los salarios actuales del estudiante o su familia, dependiendo si este es dependiente en los ingresos familiares.Para ver cómo influyen estos datos al finalizar los estudios universitarios, se utiliza la media de la deuda de los estudiantes que completan sus estudios.  Se usan los datos de las universidades para ubicarlos geográficamente en el mapa y enunciarlos según su nombre. También se desea ver transversalmente si la estructura de gobierno de la institución afecta en el endeudamiento. Se podría pensar que las universidades públicas son más baratas y afectan menos financieramente a sus estudiantes. 
+La selección de variables que se observa en la *Tabla 1* se hizo a partir de los salarios actuales del estudiante o su familia, teniendo en cuenta si este es dependiente en los ingresos familiares. Se conoce que un estudiantes independiente no tendrá la misma fluidez financiera que un estudiante dependiente, dado que, este primero debe costearse su comida, vivienda y estudios. Para ver cómo influyen estos datos al finalizar los estudios universitarios se utiliza la media de la deuda de los estudiantes que completan sus estudios.  Se usan los datos de las universidades para ubicarlos geográficamente en el mapa y enunciarlos según su nombre, de manera que cada quien pueda ubicar y seleccionar universidades cerca de su área. También se desea ver transversalmente si la estructura de gobierno de la institución afecta en el endeudamiento. Se podría pensar que las universidades públicas son más baratas y afectan menos financieramente a sus estudiantes. 
 
 Demás decisiones de la elección de las columnas se pueden observar a continuación en el procedimiento. 
 
@@ -53,8 +53,8 @@ Hicimos el siguiente procedimiento:
 **Imagen 1:** *Análisis de curva de codo.*
 
 \
-11. Se determina el uso de 3 clusters. Con esto, se trabajará con las etiquetas 1, 2 y 3, que representarán cada uno de los clusters. 
-12. Se procede con el análisis de los diferentes clústers. Se observa lo siguiente:
+11. Con base en la curva de codo, observada en la *Imagen 1*, se determina el uso de 3 clusters. Con esto, se trabajará con las etiquetas 1, 2 y 3, que representarán cada uno de los clusters. 
+12. Se procede con el análisis de los diferentes clústers. Se observa lo siguiente en la *Imagen 2*:
 Los color Cian representan el cluster 1; los naranja, el cluster 2; los verdes, el cluster 3. 
 
 # Visualización de los clusters
@@ -86,13 +86,13 @@ Veamos los datos en gráficas:
 **Imagen 3:** *Deuda mediana de los 3 clusters.*
 
 \
-Se pueden observar deudas monetarias especialmente altas en el tercer cluster, es decir, en el de la derecha. 
+Se pueden observar en la *Imagen 3* deudas monetarias especialmente altas en el tercer cluster, es decir, en el de la derecha en la imagen. 
 <img src="/Graficas/salario_dependientes.png" alt="salario de estudiantes dependientes en los 3 clusters" title="Deuda mediana">
 
 **Imagen 4:** *Salario estudiantes dependientes de los 3 clusters.*
 
 \
-Entre universidades con datos de estudiantes dependientes, se ven salarios similares en el cluster 1 y 3, el cluster 2 pueden observarse salarios más altos. 
+Según la *Imagen 4*, entre universidades con datos de estudiantes dependientes, se ven salarios similares en el cluster 1 y 3, el cluster 2 pueden observarse salarios más altos. 
 <img src="/Graficas/salario_independientes.png" alt="salario de estudiantes independientes en los 3 clusters" title="Deuda mediana">
 
 **Imagen 5:** *Salario estudiantes independientes de los 3 clusters.*
