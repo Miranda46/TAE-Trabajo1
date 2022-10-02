@@ -124,7 +124,9 @@ Se puede observar con ayuda de la *Imagen 6* que en cualquier sitio de EEUU se p
 
 Para poder desarrollar un análisis similar en Colombia, primero se requiere obtener la información económica en cuanto a los préstamos del ICETEX y préstamos a través de entidades privadas. Estos datos se deben discretizar por universidad, estructura de gobierno de la institución académica e independencia económica del estudiante, además de tener la ubicación geográfica de cada universidad. Cade destacar que estos datos económicos (Deuda luego de graduarse, salario de estudiante independiente, y salario de familia de estudiante pendendiente) pueden no estar disponibles, o no estar agrupados por universidad o colegios para el público en Colombia. Por último, se conoce que las universidades públicas y privadas de Colombia funcionan de manera diferente que en Estados Unidos. 
 
-
+# Página web
+Los invitamos cordialmente a visitar nuestra página [Universingreso](https://miranda46-tae-trabajo1-tae-streamlit-8b4qee.streamlitapp.com/) para que puedan analizar qué clase de universidad les beneficia según sus capacidades económicas.
+¡Gracias!
 # Referencias
 
 [1] "Pew Research Center" (2014, Febrero 11). The Rising Cost of Not Going to College [Online]. Available: https://www.pewresearch.org/social-trends/2014/02/11/the-rising-cost-of-not-going-to-college/
@@ -135,7 +137,7 @@ Para poder desarrollar un análisis similar en Colombia, primero se requiere obt
 
 [4] B. McGurran, A. Hahn (2022, Marzo 9). Average Student Loan Payment: Estimate How Much You’ll Owe [Online]. Available: https://www.forbes.com/advisor/student-loans/average-student-loan-payment/ 
 
-
+Todas las imágenes y las tablas son de propia autoría. 
 # Lecturas Recomendadas relacionadas
 
 "National Center for Education Statistics" (2022, Mayo). Annual Earnings by Educational Attainment [Online]. Available: https://nces.ed.gov/programs/coe/indicator/cba 
