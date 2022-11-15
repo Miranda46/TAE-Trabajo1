@@ -3,4 +3,3 @@ streamlit
 pandas
 pydeck
 joblib
-sklearn
